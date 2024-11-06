@@ -7,32 +7,8 @@
   <!-- Enlaces a las bibliotecas de Vue.js y Vue Router -->
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
   <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
-  <style>
-    /* Estilo básico */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-    }
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    nav {
-      background-color: #333;
-      padding: 10px 0;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      padding: 10px 20px;
-    }
-    nav a:hover {
-      background-color: #555;
-    }
-  </style>
+  <!-- Enlace al archivo CSS externo -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div id="app">
@@ -42,31 +18,12 @@
       <router-link to="/proyectos">Proyectos</router-link>
       <router-link to="/contacto">Contacto</router-link>
     </nav>
-    <router-view></router-view>
+    <div class="container">
+      <router-view></router-view>
+    </div>
   </div>
 
-  <script>
-    // Componentes para cada vista
-    const Inicio = { template: '<div><h2>Inicio</h2><p>Bienvenido a mi Portfolio</p></div>' };
-    const Proyectos = { template: '<div><h2>Proyectos</h2><p>Aquí puedes encontrar información sobre mis proyectos.</p></div>' };
-    const Contacto = { template: '<div><h2>Contacto</h2><p>¡Contáctame para cualquier consulta!</p></div>' };
-
-    // Configuración de Vue Router
-    const routes = [
-      { path: '/', component: Inicio },
-      { path: '/proyectos', component: Proyectos },
-      { path: '/contacto', component: Contacto }
-    ];
-
-    const router = new VueRouter({
-      routes
-    });
-
-    // Instancia de Vue
-    new Vue({
-      el: '#app',
-      router
-    });
-  </script>
+  <!-- Enlace al archivo JavaScript externo -->
+  <script src="app.js"></script>
 </body>
 </html>
