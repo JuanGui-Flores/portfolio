@@ -1,86 +1,167 @@
-/* Estilo llamativo con fondo degradado animado */
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(120deg, #ff9a9e, #fad0c4, #fad0c4, #fbc2eb, #a6c1ee);
-    background-size: 200% 200%;
-    animation: gradientAnimation 10s ease infinite;
+    line-height: 1.6;
     color: #333;
-  }
-  
-  @keyframes gradientAnimation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
-  
-  .container {
-    max-width: 800px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
-  }
-  
-  /* Navegación estilizada */
-  nav {
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 10px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(90deg, #4b79a1, #283e51);
+    color: #fff;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header nav {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+header .nav-links {
+    list-style: none;
+    display: flex;
     gap: 20px;
-  }
-  
-  nav a {
+}
+
+header .nav-links a {
     color: #fff;
     text-decoration: none;
-    padding: 10px 20px;
     font-weight: bold;
-    position: relative;
-    transition: color 0.3s ease;
-  }
-  
-  /* Efecto de animación para los enlaces de navegación */
-  nav a::before {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 3px;
-    background-color: #fff;
-    bottom: 0;
-    left: 0;
-    transition: width 0.3s ease;
-  }
-  
-  nav a:hover::before {
-    width: 100%;
-  }
-  
-  /* Animación para los títulos */
-  h2 {
-    text-align: center;
-    font-size: 2rem;
-    color: #333;
-    animation: fadeIn 1.5s ease-out;
-  }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  
-  /* Estilo para las secciones */
-  section {
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 8px;
+    transition: color 0.3s;
+}
+
+header .nav-links a:hover {
+    color: #f0c674;
+}
+
+/* About Section */
+#about {
+    background: #f4f4f4;
+}
+
+#about h1 {
+    color: #4b79a1;
+}
+
+/* Projects Section */
+#projects {
+    background: #fff;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project {
+    border: 1px solid #ddd;
     padding: 20px;
-    margin-top: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    animation: slideIn 1s ease forwards;
-  }
-  
-  @keyframes slideIn {
-    from { transform: translateX(-20px); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
-  }
-  
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.project h2 {
+    color: #283e51;
+}
+
+.project a {
+    color: #4b79a1;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.project a:hover {
+    color: #f0c674;
+}
+
+/* Skills Section */
+#skills {
+    background: #f4f4f4;
+}
+
+.skills-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    padding: 0;
+}
+
+.skills-list li {
+    background: #283e51;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+/* Contact Section */
+#contact {
+    background: #fff;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+form input, form textarea {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    background: #4b79a1;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+form button:hover {
+    background: #283e51;
+}
+
+/* Footer Styles */
+footer {
+    background: #283e51;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}

@@ -1,29 +1,98 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Portfolio</title>
-  <!-- Enlaces a las bibliotecas de Vue.js y Vue Router -->
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-  <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
-  <!-- Enlace al archivo CSS externo -->
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div id="app">
-    <nav>
-      <!-- Navegación -->
-      <router-link to="/">Inicio</router-link>
-      <router-link to="/proyectos">Proyectos</router-link>
-      <router-link to="/contacto">Contacto</router-link>
-    </nav>
-    <div class="container">
-      <router-view></router-view>
-    </div>
-  </div>
+    <!-- Header Section -->
+    <header id="header">
+        <nav>
+            <div class="logo">My Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- Enlace al archivo JavaScript externo -->
-  <script src="app.js"></script>
+    <!-- About Section -->
+    <section id="about" class="section fade-in">
+        <div class="container">
+            <h1>About Me</h1>
+            <p>Introduce yourself with a brief bio, your interests, and your professional background.</p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section fade-in">
+        <div class="container">
+            <h1>Projects</h1>
+            <div class="projects-grid">
+                <!-- Repeat this block for each project -->
+                <div class="project">
+                    <h2>Project Name</h2>
+                    <img src="project-image-1.jpg" alt="Screenshot of Project Name">
+                    <p>Description of the project. Mention technologies used and key features.</p>
+                    <a href="https://github.com/username/project-link" target="_blank">View on GitHub</a>
+                </div>
+                <div class="project">
+                    <h2>Another Project</h2>
+                    <img src="project-image-2.jpg" alt="Screenshot of Another Project">
+                    <p>Details about this project. What makes it unique?</p>
+                    <a href="https://github.com/username/another-project" target="_blank">View on GitHub</a>
+                </div>
+                <!-- Add more projects as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section fade-in">
+        <div class="container">
+            <h1>Skills</h1>
+            <ul class="skills-list">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>Python</li>
+                <!-- Add more skills as needed -->
+            </ul>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section fade-in">
+        <div class="container">
+            <h1>Contact</h1>
+            <p>If you'd like to get in touch, please fill out the form below or reach out via email:</p>
+            <p>Email: <span id="email">yourname@example.com</span> <button id="copy-email">Copy Email</button></p>
+            <form action="https://formspree.io/f/{your-email}" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <p>&copy; 2024 Your Name. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Modal for Image Viewer -->
+    <div id="image-modal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modal-img">
+        <div id="caption"></div>
+    </div>
 </body>
 </html>
