@@ -42,10 +42,10 @@ form.addEventListener('submit', (e) => {
 
     if (!name.value.trim() || !email.value.trim() || !message.value.trim()) {
         e.preventDefault();
-        alert('Please fill in all fields before submitting.');
+        alert('Por favor rellena todos los campos para continuar.');
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
         e.preventDefault();
-        alert('Please enter a valid email address.');
+        alert('Introduce un email valido.');
     }
 });
 
@@ -113,9 +113,9 @@ copyButton.style.marginLeft = '10px';
 emailField.appendChild(copyButton);
 
 copyButton.addEventListener('click', () => {
-    const emailText = emailField.innerText.split(' ')[1]; // Adjust if email text has additional content
+    const emailText = emailField.innerText.split(' ')[1];
     navigator.clipboard.writeText(emailText).then(() => {
-        alert('Email copied to clipboard!');
+        alert('Email copiado en portapapeles!');
     });
 });
 
